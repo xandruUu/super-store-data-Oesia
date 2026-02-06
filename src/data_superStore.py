@@ -82,8 +82,8 @@ def normalizar_nombres_productos(df: pd.DataFrame) -> pd.DataFrame:
     """
     df = df.copy()
 
-    master_catalog = df.groupby('Product ID')['Product Name'].first()
-    df['Product Name'] = df['Product ID'].map(master_catalog)
+    mi_catalogo_actualizado = df.groupby('Product ID')['Product Name'].first()
+    df['Product Name'] = df['Product ID'].map(mi_catalogo_actualizado)
 
     return df
 

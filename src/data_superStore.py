@@ -36,8 +36,8 @@ def solucionar_postal_codes_nulos(df: pd.DataFrame) -> pd.DataFrame:
 
     # El caso específico conocido es "Burlington, Vermont", del cual sabemos que el código postal correcto es 05401, 
     # pero al convertirlo a número se pierde el cero inicial, quedando 5401.0.
-    mask_burlington = (df['City'] == 'Burlington') & (df['State'] == 'Vermont')
-    df.loc[mask_burlington, 'Postal Code'] = 5401.0
+    mapeo_burlington = (df['City'] == 'Burlington') & (df['State'] == 'Vermont')
+    df.loc[mapeo_burlington, 'Postal Code'] = 5401.0
 
     return df
 
